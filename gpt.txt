@@ -1,0 +1,15 @@
+La propiedad position: relative no funciona como muchos piensan en términos de "referenciar" el contenedor padre para posicionar el elemento. Aquí te explico cómo funciona:
+
+Comportamiento de position: relative:
+Cuando un elemento tiene position: relative:
+
+Se mantiene en su posición original dentro del flujo normal del documento.
+Cualquier desplazamiento (como top, right, bottom, o left) es relativo a su posición original, no al contenedor padre.
+Esto significa que, aunque el elemento .tres tenga position: relative, no se está posicionando en relación a su contenedor padre .dos. Lo que realmente hace relative es mover el elemento desde donde originalmente estaba colocado, pero no lo posiciona en función del borde inferior de su contenedor.
+
+Por qué position: absolute es necesario:
+Para que .tres se posicione con respecto a su contenedor padre .dos, necesitas usar position: absolute en .tres. El position: absolute posiciona el elemento en relación con el contenedor más cercano que tenga position: relative, absolute, fixed, o sticky. Si el contenedor padre no tiene ninguna de estas propiedades, el elemento absoluto se posicionará en relación al documento (ventana del navegador).
+
+Diferencia clave:
+position: relative: Mueve el elemento desde su posición original. No afecta el posicionamiento de otros elementos, y el espacio original del elemento se mantiene.
+position: absolute: Posiciona el elemento relativo a su contenedor más cercano que tiene relative, absolute, fixed, o sticky.
