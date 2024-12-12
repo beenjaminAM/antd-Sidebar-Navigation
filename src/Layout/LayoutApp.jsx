@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
-import { Layout, Button, theme } from 'antd'
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
+import { Layout, theme } from 'antd'
+
 import Logo from '../components/Logo'
 import MenuList from '../components/MenuList'
 import ToggleThemeButton from '../components/ToggleThemeButton'
+import ToggleCollapsedButton from '../components/ToggleCollapsedButton'
 
 const { Header, Sider, Content, Footer } = Layout
 
@@ -13,6 +14,9 @@ const LayoutApp = (  ) => {
   const [darkTheme, setDarkTheme] = useState(true)
   const toggleTheme = () => {
     setDarkTheme(!darkTheme)
+  }
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed)
   }
 
   const {
@@ -48,11 +52,9 @@ const LayoutApp = (  ) => {
             top: '0',
           }}
         >
-          <Button
-            className='toggle'
-            onClick={() => setCollapsed(!collapsed)}
-            type='text'
-            icon={collapsed? <MenuUnfoldOutlined />: <MenuFoldOutlined />} 
+          <ToggleCollapsedButton
+            collapsed={collapsed}
+            toggleCollapsed={toggleCollapsed}
           />
         </Header>
         <Content
@@ -65,7 +67,7 @@ const LayoutApp = (  ) => {
           <div  className='contentapp'>
           {
               // indicates very long content
-              Array.from({ length: 1 }, (_, index) => (
+              Array.from({ length: 100 }, (_, index) => (
                 <React.Fragment key={index}>
                   {index % 20 === 0 && index ? 'more' : '...'}
                   <br />

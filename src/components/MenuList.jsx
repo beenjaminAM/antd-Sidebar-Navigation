@@ -46,7 +46,8 @@ const MenuList = ({ darkTheme }) => {
     {
       key: 'payment',
       icon: <RubyOutlined />,
-      label: 'Payment'
+      label: 'Payment',
+      danger: 'True'
     }
   ]
 
