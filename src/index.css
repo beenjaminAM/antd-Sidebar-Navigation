@@ -14,19 +14,13 @@ body {
     background-color: #fc4a4a;
 }
 
-
-
-.layoutapp {
-    height: 100vh;
+.top-sidebar {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-
-.sidebar-menu {
-    overflow: auto;
-    position: relative;
-    left: 0;
-    top: 0;
-}
 
 
 .logo {
@@ -50,15 +44,6 @@ body {
 }
 
 
-.menu-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-size: 1rem;
-    position: relative;
-}
-
-
 
 .toggle-theme-btn {
     position: absolute;
@@ -70,17 +55,20 @@ body {
     font-size: 1rem;
 }
 
-.content-main {
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    background-color: rgb(12, 12, 12);
+.toggle svg{
+    font-size: 1.2rem;
 }
 
-.contentapp {
-    flex-grow: 1;
-    background-color: #755e5e;
-    margin: 1rem;
-    border-radius: 0.7em;
-    padding: 1rem;
+.toggle-mobile svg {
+    font-size: 1.5rem;
+}
+
+.toggle-dark {
+    color: rgba(255, 255, 255, 0.65);
+    transition: background-color 0.3s, border-color 0.3s; 
+}
+
+#toggle-dark-id:hover {
+    color: rgba(255, 255, 255, 1.0);
+    
 }

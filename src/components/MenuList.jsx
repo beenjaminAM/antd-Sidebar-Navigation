@@ -52,9 +52,9 @@ const MenuList = ({ darkTheme }) => {
   ]
 
   return (
-    <Menu 
-      className='menu-bar' 
-      theme={darkTheme? 'dark': 'light'}
+    <Menu  
+      // theme={darkTheme? 'dark': 'light'}
+      theme='dark'
       mode='inline'
       items={menuItems}
     />
