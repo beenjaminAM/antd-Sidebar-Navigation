@@ -11,16 +11,16 @@
 }
 
 body {
+    /* display: flex; */
     background-color: #fc4a4a;
 }
 
-.top-sidebar {
-    padding: 0 1rem;
+/* #root {
+    flex-grow: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-}
-
+} */
 
 
 .logo {

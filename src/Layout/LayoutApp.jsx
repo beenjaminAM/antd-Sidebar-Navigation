@@ -17,8 +17,7 @@ const siderStyle = {
   scrollbarWidth: 'thin',
   scrollbarGutter: 'stable',
   zIndex: 1,
-  transition: '1s',
-
+  transition: '0.3s',
 };
 
 const LayoutApp = ({width}) => {
@@ -41,9 +40,16 @@ const LayoutApp = ({width}) => {
             : width < 992? collapsed?0:200
               : 200
         }
+        collapsible
+        collapsed = {width >= 992 ? collapsed: false}
         trigger={null}
       >
-        <div className='top-sidebar'>  
+        <div style={{
+          padding: '0.1rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: width < 992 ? 'space-between': 'center'
+        }}>
           <Logo />
           {width < 992 && <ToggleCollapsedButton
               collapsed={collapsed}
@@ -60,7 +66,8 @@ const LayoutApp = ({width}) => {
           color: '#ff00ff',
           marginInlineStart: width < 768? 0
           : width < 992? 0
-            : 200
+            : collapsed? 80: 200,
+          transition: '0.3s'
         }}
       >
         <Header
@@ -74,13 +81,25 @@ const LayoutApp = ({width}) => {
             boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)'
           }}
         >
-          {collapsed && width < 992 &&
+          {/* {collapsed && width < 992 &&
             <ToggleCollapsedButton
               collapsed={collapsed}
               toggleCollapsed={toggleCollapsed}
               mobile={width < 768? true: false }
             />
           }
+          {width >= 992 &&
+            <ToggleCollapsedButton
+              collapsed={collapsed}
+              toggleCollapsed={toggleCollapsed}
+              mobile={width < 768? true: false }
+            />
+          } */}
+          <ToggleCollapsedButton
+              collapsed={collapsed}
+              toggleCollapsed={toggleCollapsed}
+              mobile={width < 768? true: false }
+          />
         </Header>
         <Content
           style={{
